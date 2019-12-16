@@ -13,8 +13,11 @@ describe Checkout do
 end
 
 describe Product do
-  it 'expects a class which creates instances' do
-    expect(Product.new).to be_a(Product)
+  it 'allows product deatils to be stored at initialization' do
+    item1 = Product.new "001", "Chocolate Bar", 0.99
+    expect(item1.product_code).to eq("001")
+    expect(item1.name).to eq("Chocolate Bar")
+    expect(item1.price).to eq(0.99)
   end
 
 end
